@@ -20,6 +20,7 @@ Support in DNS providers
 |--------|---|-------|------|-----|
 |[Cloudflare](https://blog.cloudflare.com/automatically-provision-and-maintain-dnssec/)|Yes|Yes|Yes||
 |[DNSimple](https://support.dnsimple.com/articles/dnssec/#cdscdnskey)|Yes|Yes||[blog post](https://blog.dnsimple.com/2019/02/cds_cdnskey/)|
+|[GoDaddy](https://uk.godaddy.com/help/enable-dnssec-in-my-premium-dns-account-6420)|Yes|Yes||[presentation at ICANN 68](https://68.schedule.icann.org/meetings/EqJCzT5N6kcZhh2TT)|
 
 Server-side software
 --------------------
