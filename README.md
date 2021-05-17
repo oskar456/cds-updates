@@ -56,6 +56,12 @@ Client-side software
  - publishes both CDS and CDNSKEY records
  - requires `rndc dnssec -checkds published` to advance the KSK rollover
 
+### [PowerDNS](https://docs.powerdns.com/authoritative/guides/kskrollcdnskey.html)
+ - publishes both CDS and CDNSKEY records
+ - controlled by `pdnsutil set-publish-cds`
+ - requires manual KSK rollover
+
 Other links
 -----------
+ - https://archive.fosdem.org/2019/schedule/event/dns_dnssec_security_without_maintenance/
  - https://jpmens.net/2017/09/21/parents-children-cds-cdnskey-records-and-dnssec-cds/
