@@ -1,17 +1,17 @@
-Support for CDS/CDNSKEY updates
-===============================
+Support for CDS/CDNSKEY/CSYNC updates
+=====================================
 
-Support in domain registries
-----------------------------
+Support in domain registries and registrars
+-------------------------------------------
 
-|Registry|CDS|CDNSKEY|Delete|Bootstrap from insecure|Notes|
-|--------|---|-------|------|-----------------------|-----|
-|[.ch](https://www.nic.ch/security/cds/)|Yes|No|Yes|72 hours TCP-only|[guidelines](https://www.nic.ch/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
-|.cr|No |Yes    |Yes   |7 days TCP-only|No docs found |
-|[.cz](https://www.nic.cz/page/383/faq/#faq45)|No |Yes    |Yes   |7 days TCP-only|[FRED is used](https://fred.nic.cz/documentation/html/Concepts/AKM.html)|
-|[.li](https://www.nic.li/security/cds/)|Yes|No|Yes|72 hours TCP-only|[guidelines](https://www.nic.li/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
-|[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours|no clear info about TCP or grace period for updates|
-|[RIPE NCC](https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns#4--automated-update-of-dnssec-delegations)|Yes|No|Yes|No||
+|Registry|CDS|CDNSKEY|Delete|Bootstrap from insecure|CSYNC|Notes|
+|--------|---|-------|------|-----------------------|--|-----|
+|[.ch](https://www.nic.ch/security/cds/)|Yes|No|Yes|72 hours TCP-only|No|[guidelines](https://www.nic.ch/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
+|.cr|No |Yes    |Yes   |7 days TCP-only|No|No documentation found; FRED is used|
+|[.cz](https://www.nic.cz/page/383/faq/#faq45)|No |Yes    |Yes   |7 days TCP-only|No|[FRED is used](https://fred.nic.cz/documentation/html/Concepts/AKM.html)|
+|[.li](https://www.nic.li/security/cds/)|Yes|No|Yes|72 hours TCP-only|No|[guidelines](https://www.nic.li/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
+|[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours|No|No clear information about using TCP for bootstrapping|
+|[RIPE NCC](https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns#4--automated-update-of-dnssec-delegations)|Yes|No|Yes|No|No||
 
 Support in DNS providers
 ------------------------
@@ -23,7 +23,7 @@ Support in DNS providers
 |[DNSimple](https://support.dnsimple.com/articles/dnssec/#cdscdnskey)|Yes|Yes||[blog post](https://blog.dnsimple.com/2019/02/cds_cdnskey/)|
 |[GoDaddy](https://uk.godaddy.com/help/enable-dnssec-in-my-premium-dns-account-6420)|Yes|Yes||[presentation at ICANN 68](https://68.schedule.icann.org/meetings/EqJCzT5N6kcZhh2TT)|
 
-Server-side software
+Parent-side software
 --------------------
 
 ### dnssec-cds(8)
@@ -45,16 +45,16 @@ Server-side software
  - source code location unknown :(
  - there is [diploma thesis](https://dspace.cvut.cz/bitstream/handle/10467/87860/F8-DP-2020-Shchavleva-Marina-thesis.pdf?sequence=-1&isAllowed=y) and [presentation in Czech](https://www.nic.cz/files/nic/it_20/prezentace/Shchavleva.pdf)
 
-Client-side software
---------------------
+Child-side software
+-------------------
 
-### [knot](https://www.knot-dns.cz/docs/3.0/singlehtml/index.html#automatic-ksk-management)
+### [Knot](https://www.knot-dns.cz/docs/3.0/singlehtml/index.html#automatic-ksk-management)
  - publishes both CDS and CDNSKEY records
  - automated KSK rollover based on feedback from the parent
  - controlled by [`cds-cdnskey-publish`](https://www.knot-dns.cz/docs/3.0/singlehtml/index.html#policy-cds-cdnskey-publish) config option
  - can also submit DS change directly using DDNS
 
-### [bind9](https://bind9.readthedocs.io/en/latest/dnssec-guide.html#the-cds-and-cdnskey-resource-records)
+### [BIND9](https://bind9.readthedocs.io/en/latest/dnssec-guide.html#the-cds-and-cdnskey-resource-records)
  - publishes both CDS and CDNSKEY records
  - requires `rndc dnssec -checkds published` to advance the KSK rollover
 
