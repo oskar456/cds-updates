@@ -45,6 +45,13 @@ Parent-side software
  - source code location unknown :(
  - there is [diploma thesis](https://dspace.cvut.cz/bitstream/handle/10467/87860/F8-DP-2020-Shchavleva-Marina-thesis.pdf?sequence=-1&isAllowed=y) and [presentation in Czech](https://www.nic.cz/files/nic/it_20/prezentace/Shchavleva.pdf)
 
+### [rcdss](https://github.com/RIPE-NCC/rcdss) (RIPE NCC CDS Scanner)
+ - written in Python using [dnspython](https://www.dnspython.org/)
+ - reads RIPE Database objects
+ - produces RPSL-like diff objects
+ - multithreaded scanning
+ - no support for bootstrapping from insecure
+
 Child-side software
 -------------------
 
