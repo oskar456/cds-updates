@@ -1,29 +1,36 @@
 Support for CDS/CDNSKEY/CSYNC updates
 =====================================
 
+Relevant IETF Documents
+-----------------------
+
+- https://datatracker.ietf.org/doc/html/rfc7344
+- https://datatracker.ietf.org/doc/html/rfc8078
+- https://datatracker.ietf.org/doc/draft-ietf-dnsop-dnssec-bootstrapping/01/
+
 Support in domain registries and registrars
 -------------------------------------------
 
-|Registry|CDS|CDNSKEY|Delete|Bootstrap from insecure|CSYNC|Notes|
-|--------|---|-------|------|-----------------------|--|-----|
-|[.ch](https://www.nic.ch/security/cds/)|Yes|No|Yes|72 hours TCP-only|No|[guidelines](https://www.nic.ch/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
-|.cr|No |Yes    |Yes   |7 days TCP-only|No|No documentation found; FRED is used|
-|[.cz](https://www.nic.cz/page/383/faq/#faq45)|No |Yes    |Yes   |7 days TCP-only|No|[FRED is used](https://fred.nic.cz/documentation/html/Concepts/AKM.html)|
-|[.li](https://www.nic.li/security/cds/)|Yes|No|Yes|72 hours TCP-only|No|[guidelines](https://www.nic.li/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
-|[.nu](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only|Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
-|[.se](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only|Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
-|[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours|No|No clear information about using TCP for bootstrapping|
-|[RIPE NCC](https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns#4--automated-update-of-dnssec-delegations)|Yes|No|Yes|No|No||
+|Registry|CDS|CDNSKEY|Delete|Bootstrap from insecure|Bootstrap via `_dsboot`|CSYNC|Notes|
+|--------|---|-------|------|-----------------------|------------------------|--|-----|
+|[.ch](https://www.nic.ch/security/cds/)|Yes|No|Yes|72 hours TCP-only|Yes|No|[guidelines](https://www.nic.ch/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
+|.cr|No |Yes    |Yes   |7 days TCP-only||No|No documentation found; FRED is used|
+|[.cz](https://www.nic.cz/page/383/faq/#faq45)|No |Yes    |Yes   |7 days TCP-only||No|[FRED is used](https://fred.nic.cz/documentation/html/Concepts/AKM.html)|
+|[.li](https://www.nic.li/security/cds/)|Yes|No|Yes|72 hours TCP-only|Yes|No|[guidelines](https://www.nic.li/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
+|[.nu](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
+|[.se](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
+|[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours||No|No clear information about using TCP for bootstrapping|
+|[RIPE NCC](https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns#4--automated-update-of-dnssec-delegations)|Yes|No|Yes|No||No||
 
 Support in DNS providers
 ------------------------
 
-|Provider|CDS|CDNSKEY|Delete|Notes|
-|--------|---|-------|------|-----|
-|[Cloudflare](https://blog.cloudflare.com/automatically-provision-and-maintain-dnssec/)|Yes|Yes|Yes||
-|[deSEC](https://desec.io/)|Yes|Yes|Yes|[docs](https://desec.readthedocs.io/en/latest/dns/rrsets.html#dnskey-caveat)|
-|[DNSimple](https://support.dnsimple.com/articles/dnssec/#cdscdnskey)|Yes|Yes||[blog post](https://blog.dnsimple.com/2019/02/cds_cdnskey/)|
-|[GoDaddy](https://uk.godaddy.com/help/enable-dnssec-in-my-premium-dns-account-6420)|Yes|Yes||[presentation at ICANN 68](https://68.schedule.icann.org/meetings/EqJCzT5N6kcZhh2TT)|
+|Provider|CDS|CDNSKEY|Delete|Publishes `_dsboot`|Notes|
+|--------|---|-------|------|----------------------------------|-----|
+|[Cloudflare](https://blog.cloudflare.com/automatically-provision-and-maintain-dnssec/)|Yes|Yes|Yes|Yes||
+|[deSEC](https://desec.io/)|Yes|Yes|Yes|Yes|[docs](https://desec.readthedocs.io/en/latest/dns/rrsets.html#dnskey-caveat)|
+|[DNSimple](https://support.dnsimple.com/articles/dnssec/#cdscdnskey)|Yes|Yes|||[blog post](https://blog.dnsimple.com/2019/02/cds_cdnskey/)|
+|[GoDaddy](https://uk.godaddy.com/help/enable-dnssec-in-my-premium-dns-account-6420)|Yes|Yes|||[presentation at ICANN 68](https://68.schedule.icann.org/meetings/EqJCzT5N6kcZhh2TT)|
 
 Parent-side software
 --------------------
@@ -71,6 +78,7 @@ Child-side software
  - publishes both CDS and CDNSKEY records
  - controlled by `pdnsutil set-publish-cds`
  - requires manual KSK rollover
+ - synthesis of `_dsboot` record via `LUA` records: [Setup LUA records](https://github.com/desec-io/desec-ns/blob/43973910b86211738bcd1bb14e414c36ac0b85e0/ns/signaling_domain_zone.sh); [LUA module](https://github.com/desec-io/desec-ns/blob/43973910b86211738bcd1bb14e414c36ac0b85e0/ns/lua/signaling.lua); [pdns config](https://github.com/desec-io/desec-ns/blob/43973910b86211738bcd1bb14e414c36ac0b85e0/ns/conf/pdns.conf.var)
 
 Other links
 -----------
