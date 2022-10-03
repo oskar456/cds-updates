@@ -28,7 +28,7 @@ Support in domain registrars
 
 |Registrar|CDS|CDNSKEY|Delete|Bootstrap from insecure|Bootstrap via `_dsboot`|CSYNC|Notes|
 |---------|---|-------|------|-----------------------|------------------------|--|-----|
-|[Glauca](https://glauca.digital/blog/2020/08/10/cds-at-the-registrar-level.html)|Yes|?|?|?|?|?||
+|[Glauca](https://glauca.digital/blog/2020/08/10/cds-at-the-registrar-level.html)|Yes|Yes|Yes|All name servers must respond the same, TCP-only|In progress|?|[Docs](https://docs.glauca.digital/domains/cds/)|
 
 Support in DNS providers
 ------------------------
@@ -38,7 +38,7 @@ Support in DNS providers
 |[Cloudflare](https://blog.cloudflare.com/automatically-provision-and-maintain-dnssec/)|Yes|Yes|Yes|Yes||
 |[deSEC](https://desec.io/)|Yes|Yes|Yes|Yes|[docs](https://desec.readthedocs.io/en/latest/dns/rrsets.html#dnskey-caveat)|
 |[DNSimple](https://support.dnsimple.com/articles/dnssec/#cdscdnskey)|Yes|Yes|||[blog post](https://blog.dnsimple.com/2019/02/cds_cdnskey/)|
-|[Glauca HexDNS](https://docs.glauca.digital/domains/cds/)|Yes|Yes||in progress||
+|[Glauca HexDNS](https://docs.glauca.digital/domains/cds/)|Yes|Yes|Yes|Yes||
 |[GoDaddy](https://uk.godaddy.com/help/enable-dnssec-in-my-premium-dns-account-6420)|Yes|Yes|||[presentation at ICANN 68](https://68.schedule.icann.org/meetings/EqJCzT5N6kcZhh2TT)|
 
 Parent-side software
