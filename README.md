@@ -21,6 +21,7 @@ Support in domain registries
 |[.nu](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
 |[.se](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
 |[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours||No|No clear information about using TCP for bootstrapping|
+|.alt.za, .edu.za|Yes|No|Yes|72 hours|No|No||
 |[RIPE NCC](https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns#4--automated-update-of-dnssec-delegations)|Yes|No|Yes|No||No||
 
 Support in domain registrars
