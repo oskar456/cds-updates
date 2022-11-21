@@ -30,6 +30,7 @@ Support in domain registrars
 |Registrar|CDS|CDNSKEY|Delete|Bootstrap from insecure|Bootstrap via `_dsboot`|CSYNC|Notes|
 |---------|---|-------|------|-----------------------|------------------------|--|-----|
 |[Glauca](https://glauca.digital/blog/2020/08/10/cds-at-the-registrar-level.html)|Yes|Yes|Yes|All name servers must respond the same, TCP-only|In progress|?|[Docs](https://docs.glauca.digital/domains/cds/)|
+|[Domainnameshop](https://domainname.shop/faq?id=395&section=7)|Yes|Yes|Yes|All name servers must respond the same, TCP-only|Possible future|No||
 
 Support in DNS providers
 ------------------------
