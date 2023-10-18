@@ -21,7 +21,8 @@ Support in domain registries
 |[.nu](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
 |[.se](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
 |[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours||No|No clear information about using TCP for bootstrapping|
-|[RIPE NCC](https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns#4--automated-update-of-dnssec-delegations)|Yes|No|Yes|No||No||
+|.alt.za, .edu.za|Yes|No|Yes|72 hours|No|No||
+|[RIPE NCC](https://apps.db.ripe.net/docs/Database-Support/Configuring-Reverse-DNS/#automated-update-of-dnssec-delegations)|Yes|No|Yes|No||No||
 
 Support in domain registrars
 ----------------------------
@@ -29,6 +30,7 @@ Support in domain registrars
 |Registrar|CDS|CDNSKEY|Delete|Bootstrap from insecure|Bootstrap via `_dsboot`|CSYNC|Notes|
 |---------|---|-------|------|-----------------------|------------------------|--|-----|
 |[Glauca](https://glauca.digital/blog/2020/08/10/cds-at-the-registrar-level.html)|Yes|Yes|Yes|All name servers must respond the same, TCP-only|In progress|?|[Docs](https://docs.glauca.digital/domains/cds/)|
+|[Domainnameshop](https://domainname.shop/faq?id=395&section=7)|Yes|Yes|Yes|All name servers must respond the same, TCP-only|Possible future|No||
 
 Support in DNS providers
 ------------------------
