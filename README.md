@@ -42,6 +42,7 @@ Support in DNS providers
 |[DNSimple](https://support.dnsimple.com/articles/dnssec/#cdscdnskey)|Yes|Yes|||[blog post](https://blog.dnsimple.com/2019/02/cds_cdnskey/)|
 |[Glauca HexDNS](https://docs.glauca.digital/domains/cds/)|Yes|Yes|Yes|Yes||
 |[GoDaddy](https://uk.godaddy.com/help/enable-dnssec-in-my-premium-dns-account-6420)|Yes|Yes|||[presentation at ICANN 68](https://68.schedule.icann.org/meetings/EqJCzT5N6kcZhh2TT)|
+|[RcodeZero DNS](https://www.rcodezero.at/)|Yes|Yes|No|No||
 
 Parent-side software
 --------------------
