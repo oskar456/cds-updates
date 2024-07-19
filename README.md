@@ -6,7 +6,7 @@ Relevant IETF Documents
 
 - https://datatracker.ietf.org/doc/html/rfc7344
 - https://datatracker.ietf.org/doc/html/rfc8078
-- https://datatracker.ietf.org/doc/draft-ietf-dnsop-dnssec-bootstrapping/
+- https://datatracker.ietf.org/doc/html/rfc9615
 
 Support in domain registries
 ----------------------------
