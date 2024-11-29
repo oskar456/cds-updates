@@ -20,7 +20,7 @@ Support in domain registries
 |[.li](https://www.nic.li/security/cds/)|Yes|No|Yes|72 hours TCP-only|Yes|No|[guidelines](https://www.nic.li/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
 |[.nu](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
 |[.se](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/automatiserad-dnssec/)|Yes|No|Yes|72 hours TCP-only||Yes|[Policy and Guidelines](https://internetstiftelsen.se/domaner/domannamnsbranschen/teknik/policy-and-guidelines-for-automated-dnssec-provisioning/)|
-|[.sk](https://sk-nic.sk/wp-content/uploads/2019/12/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours||No|No clear information about using TCP for bootstrapping|
+|[.sk](https://sk-nic.sk/wp-content/uploads/documents/DNSSEC_CDS_EN.pdf)|Yes|No|Yes|72 hours||No|No clear information about using TCP for bootstrapping|
 |.alt.za, .edu.za|Yes|No|Yes|72 hours|No|No||
 |[RIPE NCC](https://apps.db.ripe.net/docs/Database-Support/Configuring-Reverse-DNS/#automated-update-of-dnssec-delegations)|Yes|No|Yes|No||No||
 
