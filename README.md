@@ -4,9 +4,9 @@ Support for CDS/CDNSKEY/CSYNC updates
 Relevant IETF Documents
 -----------------------
 
-- https://datatracker.ietf.org/doc/html/rfc7344
-- https://datatracker.ietf.org/doc/html/rfc8078
-- https://datatracker.ietf.org/doc/html/rfc9615
+- [RFC 7344](https://datatracker.ietf.org/doc/html/rfc7344): Automating DNSSEC Delegation Trust Maintenance
+- [RFC 8078](https://datatracker.ietf.org/doc/html/rfc8078): Managing DS Records from the Parent via CDS/CDNSKEY
+- [RFC 9615](https://datatracker.ietf.org/doc/html/rfc9615): Automatic DNSSEC Bootstrapping Using Authenticated Signals from the Zone's Operator
 
 Support in domain registries
 ----------------------------
@@ -85,7 +85,7 @@ Child-side software
 
 ### [BIND9](https://bind9.readthedocs.io/en/latest/dnssec-guide.html#the-cds-and-cdnskey-resource-records)
  - publishes both CDS and CDNSKEY records
- - requires `rndc dnssec -checkds published` to advance the KSK rollover
+ - automated KSK rollover with `checkds` option
 
 ### [PowerDNS](https://docs.powerdns.com/authoritative/guides/kskrollcdnskey.html)
  - publishes both CDS and CDNSKEY records
