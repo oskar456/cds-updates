@@ -74,6 +74,13 @@ Parent-side software
  - multithreaded scanning
  - no support for bootstrapping from insecure
 
+### [dnssec-publish-ds](https://github.com/BugMaster510945/dnssec-publish-ds)
+ - written in Go as a long-running daemon
+ - consumes CDS and CDNSKEY records and continuously reconciles parent DS records
+ - supports DS publication through pluggable providers (currently RFC2136 Dynamic DNS UPDATE and OVH)
+ - relies on a DNSSEC-validating recursive resolver (AD bit required) for CDS/CDNSKEY/DS lookups
+   does not currently implement RFC 9615 (DNSSEC bootstrapping), RFC 9859 (DNSSEC removal), or the authoritative multi-NS consistency checks and CSYNC processing described in RFC 9975
+ 
 Child-side software
 -------------------
 
