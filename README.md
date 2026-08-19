@@ -14,7 +14,6 @@ Support in domain registries
 |Registry|CDS|CDNSKEY|Delete|Bootstrap from insecure|Bootstrap via `_dsboot`|CSYNC|Notes|
 |--------|---|-------|------|-----------------------|------------------------|--|-----|
 |[.ch](https://www.nic.ch/security/cds/)|Yes|No|Yes|72 hours TCP-only|Yes|No|[guidelines](https://www.nic.ch/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
-|.cr|No |Yes    |Yes   |7 days TCP-only||No|No documentation found; FRED is used|
 |[.cz](https://www.nic.cz/page/383/faq/#faq45)|No |Yes    |Yes   |7 days TCP-only||No|[FRED is used](https://fred.nic.cz/documentation/html/Concepts/AKM.html)|
 |[.fo](https://centralnic.support/hc/en-gb/articles/5957742209309)|Yes|No|Yes|72 hours||No|[guidelines](https://centralnic.support/hc/en-gb/articles/5957742209309)|
 |[.li](https://www.nic.li/security/cds/)|Yes|No|Yes|72 hours TCP-only|Yes|No|[guidelines](https://www.nic.li/export/shared/.content/files/SWITCH_CDS_Manual_en.pdf)|
