@@ -7,6 +7,7 @@ Relevant IETF Documents
 - [RFC 7344](https://datatracker.ietf.org/doc/html/rfc7344): Automating DNSSEC Delegation Trust Maintenance
 - [RFC 8078](https://datatracker.ietf.org/doc/html/rfc8078): Managing DS Records from the Parent via CDS/CDNSKEY
 - [RFC 9615](https://datatracker.ietf.org/doc/html/rfc9615): Automatic DNSSEC Bootstrapping Using Authenticated Signals from the Zone's Operator
+- [RFC 10026](https://datatracker.ietf.org/doc/html/rfc10026): Operational Recommendations for DNSSEC Delegation Signer (DS) Automation
 
 Support in domain registries
 ----------------------------
